@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Menu</title>
+</head>
+<body>
+    <div class="navigation">
+        <div class="apple_div">
+            <i class="fa-brands fa-apple"></i>
+            <span class="apple_logo">Brand name</span>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-comment"></i>
+                        <span>Message</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                        <span>Help</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Setting</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-lock"></i>
+                        <span>Password</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span>Sign out</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="toggle_btn"></div>
+        </div>
+        
+    </div>
+
+
+    <script>
+        document.querySelector(".toggle_btn").addEventListener("click",function(){
+            document.querySelector(".toggle_btn").classList.toggle("active");
+            document.querySelector(".navigation").classList.toggle("active");
+        })
+    </script>
+</body>
+</html>
