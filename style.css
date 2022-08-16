@@ -5,7 +5,7 @@
 } 
 body{
     font-family: 'Montserrat', sans-serif;
-    background: rgb(6, 100, 195);
+    background: #424874;
     display: flex;
     align-items: center;
     height: 100vh;
@@ -14,19 +14,19 @@ body{
 .navigation{
     width: 200px;
     height: 90vh;
-    background: rgb(23, 135, 233);
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    background: #64649d;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
     position: relative;
     overflow: hidden;
-    transition: width 0.3s;
-    -webkit-transition: width 0.3s;
-    -moz-transition: width 0.3s;
-    -ms-transition: width 0.3s;
-    -o-transition: width 0.3s;
+    transition:width 0.5s cubic-bezier(1, -0.34, 0, 1.33);
+    -webkit-transition:width 0.5s cubic-bezier(1, -0.34, 0, 1.33);
+    -moz-transition:width 0.5s cubic-bezier(1, -0.34, 0, 1.33);
+    -ms-transition:width 0.5s cubic-bezier(1, -0.34, 0, 1.33);
+    -o-transition:width 0.5s cubic-bezier(1, -0.34, 0, 1.33);
     margin-left: 10px;
 }
 
@@ -49,6 +49,7 @@ body{
     -ms-border-radius: 30px 0px 0px 30px;
     -o-border-radius: 30px 0px 0px 30px;
     cursor: pointer;
+    white-space: nowrap;
 }
 .apple_div{
     color: white;
@@ -62,16 +63,22 @@ body{
     -ms-border-radius: 0;
     -o-border-radius: 0;
     margin-bottom: 5px;
+    cursor: auto;
 }
 
 .apple_div span{
-    margin-left: 15px;
+    margin-left: 20px;
     font-weight: 600;
     display: block;
+    white-space: nowrap;
+}
+
+.apple_div i{
+    font-size: 1.5em;
 }
 
 
-.menu ul li:not(:first-child):hover::before{
+.menu ul li:hover::before{
     content: '';
     position: absolute;
     width: 20px;
@@ -84,7 +91,9 @@ body{
     box-shadow: 7.5px 7.5px 0px 7.5px white;
 }
 
-.menu ul li:not(:first-child):hover::after{
+
+
+.menu ul li:hover::after{
     content: '';
     position: absolute;
     width: 20px;
@@ -94,6 +103,7 @@ body{
     bottom:-20px;
     border-top-right-radius: 50%;
     box-shadow: 7.5px -7.5px 0px 7.5px white;
+
 }
 
 .menu ul li:hover{
@@ -112,7 +122,7 @@ body{
 }
 
 .menu ul li a span{
-    margin-left: 15px;
+    margin-left: 20px;
 }
 
 .toggle_btn{
@@ -120,7 +130,7 @@ body{
     width: 30px;
     height: 30px;
     bottom: 10px;
-    right: 5px;
+    right: 10px;
     overflow: hidden;
     cursor: pointer;
     transition: .8s;
@@ -137,38 +147,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 0px 5px rgba(0,0,0,.15);
 }
 
 .toggle_btn::before{
     content: '';
     position: absolute;
-    width: 70%;
-    height: 3px;
-    background: rgb(6, 100, 195);
+    width: 60%;
+    height: 1.9px;
+    background: #64649d;
     border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    transition: .8s;
-    -webkit-transition: .8s;
-    -moz-transition: .8s;
-    -ms-transition: .8s;
-    -o-transition: .8s;
-    transform: rotate(35deg);
-    -webkit-transform: rotate(35deg);
-    -moz-transform: rotate(35deg);
-    -ms-transform: rotate(35deg);
-    -o-transform: rotate(35deg);
-}
-
-.toggle_btn::after{
-    content: '';
-    position: absolute;
-    width: 70%;
-    height: 3px;
-    border-radius: 5px;
-    background: rgb(6, 100, 195);
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
@@ -185,13 +173,35 @@ body{
     -o-transform: rotate(135deg);
 }
 
+.toggle_btn::after{
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    border-radius: 5px;
+    background: #64649d;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    transition: .8s;
+    -webkit-transition: .8s;
+    -moz-transition: .8s;
+    -ms-transition: .8s;
+    -o-transition: .8s;
+    transform: rotate(-315deg);
+    -webkit-transform: rotate(-315deg);
+    -moz-transform: rotate(-315deg);
+    -ms-transform: rotate(-315deg);
+    -o-transform: rotate(-315deg);
+}
+
 .toggle_btn.active::before{
-    transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    top: 10px;
+    transform: rotate(0deg) translateY(-3px);
+    -webkit-transform: rotate(0deg) translateY(-3px);
+    -moz-transform: rotate(0deg) translateY(-3px);
+    -ms-transform: rotate(0deg) translateY(-3px);
+    -o-transform: rotate(0deg) translateY(-3px);
 }
 
 .toggle_btn.active{
@@ -199,11 +209,11 @@ body{
 }
 
 .toggle_btn.active::after{
-    transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
+    transform: rotate(0deg) translateY(0px);
+    -webkit-transform: rotate(0deg) translateY(0px);
+    -moz-transform: rotate(0deg) translateY(0px);
+    -ms-transform: rotate(0deg) translateY(0px);
+    -o-transform: rotate(0deg) translateY(0px);
     top: 20px;
 }
 
@@ -214,26 +224,32 @@ body{
     -moz-border-radius: 50px;
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
+    transition:width 0.5s cubic-bezier(1, -0.34, 0, 1.33);
+    transition-property: width;
+    transition-duration: 0.8s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-delay: 0.2s;
+    -webkit-transition:width 0.5s cubic-bezier(1, -0.34, 0, 1.33);
+    -moz-transition:width 0.5s cubic-bezier(1, -0.34, 0, 1.33);
+    -ms-transition:width 0.5s cubic-bezier(1, -0.34, 0, 1.33);
+    -o-transition:width 0.5s cubic-bezier(1, -0.34, 0, 1.33);
 }
 
 .navigation.active .menu ul li{
-    padding: 15px;
+    white-space: nowrap;
 }
-.navigation.active .apple_div{
-    padding-top: 10px;
-    padding-bottom: 10px;
+
+.navigation.active .menu ul li a span{
+    margin-left: 25px;
 }
 
 .navigation.active .apple_div i{
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin-left: 4px;
 }
 
 .navigation.active .apple_logo{
-    display: none;
+    white-space: nowrap;
 }
 
-.navigation.active .menu ul li a span{
-    visibility: hidden;
-    display: none;
-}
